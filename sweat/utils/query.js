@@ -1,7 +1,7 @@
 const mysql = require('mysql');
 const MYSQL_CONFIG = require('../config/mysql_config');
 
-
+console.log(MYSQL_CONFIG)
 // mysql
 const pool = mysql.createPool(MYSQL_CONFIG);
 console.log(pool)
