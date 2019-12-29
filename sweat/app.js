@@ -9,6 +9,8 @@ const logger = require('koa-logger')
 const index = require('./routes/index')
 const users = require('./routes/users')
 
+const mysql = require('./utils/query')
+
 // error handler
 onerror(app)
 
@@ -21,7 +23,7 @@ app.use(logger())
 app.use(require('koa-static')(__dirname + '/public'))
 
 app.use(views(__dirname + '/views', {
-  extension: 'ejs'
+  extension: 'html'
 }))
 
 // logger

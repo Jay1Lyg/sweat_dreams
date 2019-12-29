@@ -1,9 +1,9 @@
 const router = require('koa-router')()
+const mysqlconfig = require('../utils/query')
 
 router.get('/', async (ctx, next) => {
-  await ctx.render('index', {
-    title: '傻甜甜，傻又傻，骑着车子没有扎'
-  })
+  // console.log(ctx.session.username)
+  ctx.body = await mysqlconfig.query();
 })
 
 router.get('/string', async (ctx, next) => {
