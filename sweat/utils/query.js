@@ -4,7 +4,7 @@ const MYSQL_CONFIG = require('../config/mysql_config');
 
 // mysql
 const pool = mysql.createPool(MYSQL_CONFIG);
-
+console.log(pool)
 // sql语句入口
 const query = (sql,val) => {
     return new Promise((res,rej) => {
