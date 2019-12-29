@@ -1,7 +1,7 @@
 const mysqlConfig = {
     user: "root",
-    pasword: "Lyg12348976????",
-    data_base: "mysql",
+    password: "Lyg12348976????",
+    database: "mysql",
     host: "localhost",
     port:3306
 }
