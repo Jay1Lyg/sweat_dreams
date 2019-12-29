@@ -15,14 +15,7 @@ const query = (sql,val) => {
             }  
             else{
                 console.log('连接成功')
-                connection.query(sql,val,(err,fields) => {
-                    if(err) {
-                        rej(err)
-                    }else{
-                        res(fields)
-                    }
-                    connection.release()
-                })
+                
             }
              
         })
