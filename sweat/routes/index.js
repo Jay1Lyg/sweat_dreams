@@ -1,9 +1,14 @@
 const router = require('koa-router')()
-const mysqlconfig = require('../utils/query')
-
+const utilmysql= require('../utils/sql')
+const createTables = require('../config/createTabel')
 router.get('/', async (ctx, next) => {
   // console.log(ctx.session.username)
-  ctx.body = await mysqlconfig.query();
+  // createTable(createTables.role)
+// createTable(createTables.permission)
+// createTable(createTables.userRole)
+// createTable(createTables.rolePermission)
+ 
+ctx.body = await utilmysql.findUser(1);
 })
 
 router.get('/string', async (ctx, next) => {

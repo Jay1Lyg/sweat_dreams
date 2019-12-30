@@ -1,8 +1,8 @@
 const mysqlConfig = {
     user: "root",
     password: "Lyg12348976????",
-    database: "mysql",
-    host: "localhost",
+    database: "webinfo",
+    host: "111.229.68.228",
     port:3306
 }
 

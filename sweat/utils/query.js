@@ -6,22 +6,24 @@ console.log(MYSQL_CONFIG)
 const pool = mysql.createPool(MYSQL_CONFIG);
 console.log(pool)
 // sql语句入口
-const query = (sql,val) => {
-    return new Promise((res,rej) => {
-        pool.getConnection(function(err,connection){  
-            if(err) {
-                console.log('连接失败')
-                rej(err)
-            }  
-            else{
-                console.log('连接成功')
-                
+let query = function(sql, values) {
+    return new Promise((resolve, reject) => {
+      pool.getConnection(function(err, connection) {
+        if (err) {
+          resolve(err)
+        } else {
+          connection.query(sql, values, (err, rows) => {
+            if (err) {
+              reject(err)
+            } else {
+              resolve(rows)
             }
-             
-        })
-         
+            connection.release()
+          })
+        }
+      })
     })
-};
+  }
 
 module.exports = {
     query
